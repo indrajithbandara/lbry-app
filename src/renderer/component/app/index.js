@@ -4,12 +4,6 @@ import {
   selectHistoryIndex,
   selectActiveHistoryEntry,
 } from 'redux/selectors/navigation';
-import {
-  selectIsBackDisabled,
-  selectIsForwardDisabled,
-  selectCurrentPage,
-  selectNavLinks,
-} from 'redux/selectors/navigation';
 import { selectUser } from 'redux/selectors/user';
 import { doAlertError } from 'redux/actions/app';
 import { doRecordScroll } from 'redux/actions/navigation';

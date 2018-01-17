@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import classnames from 'classnames';
-import * as icons from 'constants/icons';
+// import * as icons from 'constants/icons';
 import * as Icons from 'react-feather';
 
 type Props = {
