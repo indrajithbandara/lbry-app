@@ -107,11 +107,15 @@ ul {
 
 .main {
   padding: 0 $spacing-vertical $spacing-vertical;
+  max-width: 900px;
+  margin: auto;
 }
 
 .main--no-padding {
   padding-left: 0;
   padding-right: 0;
+  margin: 0;
+  max-width: none;
 }
 
 .page__header {
