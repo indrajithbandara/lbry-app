@@ -25,7 +25,7 @@ class CreditAmount extends React.PureComponent {
 
   render() {
     const minimumRenderableAmount = Math.pow(10, -1 * this.props.precision);
-    const { amount, precision, showFullPrice, showFree, label, showPlus } = this.props;
+    const { amount, precision, showFullPrice, showFree, label, showPlus, large } = this.props;
 
     const fullPrice = formatFullPrice(amount, 2);
     const isFree = parseFloat(amount) === 0;
@@ -55,8 +55,9 @@ class CreditAmount extends React.PureComponent {
       <span
         title={fullPrice}
         className={classnames('credit-amount', {
-          'credit-amount--free': isFree,
-          'credit-amount--cost': !isFree
+          'credit-amount--free': !large && isFree,
+          'credit-amount--cost': !large && !isFree,
+          'credit-amount--large': large
         })}>
         {amountText}
 

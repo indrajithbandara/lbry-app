@@ -13,24 +13,23 @@ const WalletBalance = props => {
         </div>
  */
   return (
-    <section className="card">
-      <div className="card__title-primary">
-        <h3>{__('Balance')}</h3>
-      </div>
+    <section className="card card--section">
+      <h2>{__('Balance')}</h2>
+      <span className="card__subtitle">You currently have</span>
       <div className="card__content">
-        {(balance || balance === 0) && <CreditAmount amount={balance} precision={8} />}
-      </div>
-      <div className="card__actions">
-        <Link button="alt" navigate="/getcredits" label={__('Get Credits')} />
-        <Link
-          button="alt"
-          disabled={balance === 0}
-          navigate="/backup"
-          label={__('Backup Wallet')}
-        />
+        {(balance || balance === 0) && <CreditAmount large amount={balance} precision={8} />}
       </div>
     </section>
   );
 };
+// <div className="card__actions">
+// <Link button="alt" navigate="/getcredits" label={__('Get Credits')} />
+// <Link
+// button="alt"
+// disabled={balance === 0}
+// navigate="/backup"
+// label={__('Backup Wallet')}
+// />
+// </div>
 
 export default WalletBalance;

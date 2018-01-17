@@ -16,14 +16,12 @@ export default class Address extends React.PureComponent {
   }
 
   render() {
-    const { address, showCopyButton, doShowSnackBar } = this.props;
+    const { address, doShowSnackBar } = this.props;
 
     return (
-      <div className="form-field form-field--address">
+      <div className="form__field">
         <input
-          className={classnames('input-copyable', {
-            'input-copyable--with-copy-btn': showCopyButton,
-          })}
+          className={classnames('input-copyable', {})}
           type="text"
           ref={input => {
             this._inputElem = input;
@@ -34,18 +32,14 @@ export default class Address extends React.PureComponent {
           readOnly="readonly"
           value={address || ''}
         />
-        {showCopyButton && (
-          <span className="header__item">
-            <Link
-              button="alt button--flat"
-              icon="clipboard"
-              onClick={() => {
-                clipboard.writeText(address);
-                doShowSnackBar({ message: __('Address copied') });
-              }}
-            />
-          </span>
-        )}
+        <Link
+          alt
+          icon="Clipboard"
+          onClick={() => {
+            clipboard.writeText(address);
+            doShowSnackBar({ message: __('Address copied') });
+          }}
+        />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import Link from 'component/link';
 import CreditAmount from 'component/common/credit-amount';
 
@@ -9,24 +9,23 @@ type Props = {
 
 const RewardSummary = (props: Props) => {
   const { unclaimedRewardAmount } = props;
+  const hasRewards = unclaimedRewardAmount > 0;
 
   return (
-    <section className="card">
-      <div className="card__title-primary">
-        <h3>{__('Rewards')}</h3>
-      </div>
-      <div className="card__content">
-        {unclaimedRewardAmount > 0 ? (
-          <p>
+    <section className="card card--section">
+      <h2>{__('Rewards')}</h2>
+      <p className="card__subtitle">
+        {hasRewards ? (
+          <React.Fragment>
             {__('You have')} <CreditAmount amount={unclaimedRewardAmount} precision={8} />{' '}
             {__('in unclaimed rewards')}.
-          </p>
+          </React.Fragment>
         ) : (
-          <p>{__('There are no rewards available at this time, please check back later')}.</p>
+          <React.Fragment>{__('There are no rewards available at this time, please check back later')}.</React.Fragment>
         )}
-      </div>
+      </p>
       <div className="card__actions">
-        <Link button="primary" navigate="/rewards" label={__('Claim Rewards')} />
+        <Link button="primary" navigate="/rewards" label={hasRewards ? __('Claim Rewards') : __('View Rewards')} />
       </div>
     </section>
   );

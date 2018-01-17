@@ -9,8 +9,12 @@
   position: relative;
 }
 
-.card--placeholder {
-  background-color: black;
+.card--section {
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: $spacing-vertical;
+  margin-top: $spacing-vertical * 2/3;
+  box-shadow: var(--box-shadow-layer);
 }
 
 .card--small {
@@ -73,12 +77,16 @@
 // }
 //
 
-//
-// .card__actions {
-//   margin-top: var(--card-margin);
-//   margin-bottom: var(--card-margin);
-//   user-select: none;
-// }
+.card__content {
+  margin-top: var(--card-margin);
+  margin-bottom: var(--card-margin);
+}
+
+.card__actions {
+  margin-top: var(--card-margin);
+  margin-bottom: var(--card-margin);
+  user-select: none;
+}
 //
 // .card__actions--bottom {
 //   margin-top: $spacing-vertical * 1/3;
@@ -95,13 +103,7 @@
 //   float: right;
 // }
 //
-// .card__content {
-//   margin-top: var(--card-margin);
-//   margin-bottom: var(--card-margin);
-//   table:not(:last-child) {
-//     margin-bottom: var(--card-margin);
-//   }
-// }
+
 //
 // .card__actions--only-vertical {
 //   margin-left: 0;

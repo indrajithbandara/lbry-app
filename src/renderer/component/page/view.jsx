@@ -4,38 +4,16 @@ import classnames from 'classnames';
 import { BusyMessage } from 'component/common';
 import Button from 'component/link';
 
-type NavLink = {
-  label: string,
-  path: string,
-  active: boolean,
-  subLinks?: Array<NavLink>,
-};
-
-type NavLinks = {
-  primary: Array<NavLink>,
-  secondary: Array<NavLink>,
-};
-
 type Props = {
   children: React.Node,
   pageTitle: ?string,
   noPadding: ?boolean,
-  isLoading: ?boolean,
-  back: () => void,
-  forward: () => void,
-  isBackDisabled: boolean,
-  isForwardDisabled: boolean,
-  navigate: (string, ?{}) => void,
-  balance: string,
-  downloadUpgrade: any => void,
-  isUpgradeAvailable: boolean,
-  navLinks: NavLinks,
 };
 
 const Page = (props: Props) => {
-  const { pageTitle, children } = props;
+  const { pageTitle, children, noPadding } = props;
   return (
-    <main className="main">
+    <main className={classnames("main", { "main--no-padding": noPadding })}>
       {pageTitle && (
         <div className="page__header">
           {pageTitle && <h1 className="page__title">{pageTitle}</h1>}
