@@ -51,28 +51,6 @@ export const selectPageTitle = createSelector(
   selectCurrentParams,
   (page, params) => {
     switch (page) {
-      case 'show': {
-        const parts = [Lbryuri.normalize(params.uri)];
-        // If the params has any keys other than "uri"
-        if (Object.keys(params).length > 1) {
-          parts.push(toQueryString(Object.assign({}, params, { uri: null })));
-        }
-        return parts.join('?');
-      }
-      // case 'discover':
-      //   return __('Explore New Content');
-      // case 'subscriptions':
-      //   return __('Your Subscriptions');
-      // case 'wallet':
-      //   return __('Your Wallet');
-      // case 'settings':
-      //   return __('Settings');
-      // case 'help':
-      //   return __('Help');
-      // case 'send':
-      //   return __('Send LBRY Credits');
-      // case 'getcredits':
-      //   return __('Get LBRY Credits');
       default:
         return '';
     }

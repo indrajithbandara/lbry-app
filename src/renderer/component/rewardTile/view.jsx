@@ -11,7 +11,7 @@ const RewardTile = props => {
   const claimed = !!reward.transaction_id;
 
   return (
-    <section className="card">
+    <section className="card card--section">
       <div className="card__inner">
         <div className="card__title-primary">
           <CreditAmount amount={reward.reward_amount} />

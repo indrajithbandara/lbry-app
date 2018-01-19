@@ -3,6 +3,7 @@ import { BusyMessage } from 'component/common';
 import RewardListClaimed from 'component/rewardListClaimed';
 import RewardTile from 'component/rewardTile';
 import Link from 'component/link';
+import Page from 'component/page';
 
 class RewardsPage extends React.PureComponent {
   /*
@@ -33,7 +34,7 @@ class RewardsPage extends React.PureComponent {
     if (user && !user.is_reward_approved) {
       if (!user.primary_email || !user.has_verified_email || !user.is_identity_verified) {
         return (
-          <section className="card">
+          <section className="card card--section">
             <div className="card__title-primary">
               <h3>{__('Humans Only')}</h3>
             </div>
@@ -101,6 +102,7 @@ class RewardsPage extends React.PureComponent {
       );
     }
     return (
+      // TODO: come back to me and actually implement a grid
       <div className="card-grid">
         {rewards.map(reward => <RewardTile key={reward.reward_type} reward={reward} />)}
       </div>
@@ -109,11 +111,11 @@ class RewardsPage extends React.PureComponent {
 
   render() {
     return (
-      <main className="main--single-column">
+      <Page>
         {this.renderPageHeader()}
         {this.renderUnclaimedRewards()}
         {<RewardListClaimed />}
-      </main>
+      </Page>
     );
   }
 }

@@ -12,7 +12,9 @@ class WalletAddress extends React.PureComponent {
 
     return (
       <section className="card card--section">
-        <h2>{__('Receive Credits')}</h2>
+        <div className="card__title-primary">
+          <h2>{__('Receive Credits')}</h2>
+        </div>
         <p className="card__subtitle">
           {__('Use this wallet address to receive credits sent by another user (or yourself).')}
         </p>

@@ -9,7 +9,7 @@ const RewardListClaimed = props => {
   }
 
   return (
-    <section className="card">
+    <section className="card card--section">
       <div className="card__title-identity">
         <h3>Claimed Rewards</h3>
       </div>

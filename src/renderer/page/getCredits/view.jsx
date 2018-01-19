@@ -9,13 +9,17 @@ const GetCreditsPage = props => (
     <RewardSummary />
     <ShapeShift />
     <section className="card card--section">
-      <h2>{__('From External Wallet')}</h2>
+      <div className="card__title-primary">
+        <h2>{__('From External Wallet')}</h2>
+      </div>
       <div className="card__actions">
-        <Link button="alt" navigate="/send" icon="icon-send" label={__('Send / Receive')} />
+        <Link navigate="/send" label={__('Send / Receive')} />
       </div>
     </section>
     <section className="card card--section">
-      <h2>{__('More ways to get LBRY Credits')}</h2>
+      <div className="card__title-primary">
+        <h2>{__('More ways to get LBRY Credits')}</h2>
+      </div>
       <div className="card__content">
         <p>
           {
