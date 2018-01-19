@@ -77,19 +77,17 @@ class ShapeShift extends React.PureComponent<Props> {
       // if the markup below changes for the initial render (formx) there will be content jumping
       // the styling in shapeshift.scss will need to be updated to the correct min-height
       <section
-        className={classnames('card shapeshift__wrapper', {
+        className={classnames('card card--section', {
           'shapeshift__initial-wrapper': loading,
         })}
       >
-        <div className="card__title-primary">
-          <h3>{__('Convert Crypto to LBC')}</h3>
-          <p className="help">
-            {__('Powered by ShapeShift. Read our FAQ')}{' '}
-            <Link href="https://lbry.io/faq/shapeshift">{__('here')}</Link>.
-            {hasActiveShift &&
-              shiftState !== 'complete' && <span>{__('This will update automatically.')}</span>}
-          </p>
-        </div>
+        <h2>{__('Convert Crypto to LBC')}</h2>
+        <p className="card__subtitle">
+          {__('Powered by ShapeShift. Read our FAQ')}{' '}
+          <Link fakeLink label={__('here')} href="https://lbry.io/faq/shapeshift" />.
+          {hasActiveShift &&
+            shiftState !== 'complete' && <span>{__('This will update automatically.')}</span>}
+        </p>
 
         <div className="card__content shapeshift__content">
           {error && <div className="form-field__error">{error}</div>}

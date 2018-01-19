@@ -1,6 +1,7 @@
 .form-row {
   display: flex;
   flex-direction: column;
+  padding: $spacing-vertical / 3 0;
 }
 
 .form-row--inline {
@@ -14,28 +15,7 @@
 
 .form-row__field {
   display: flex;
-  padding: $spacing-vertical * 2/3 0;
-
-  textarea,
-  input[type='text'],
-  input[type='password'],
-  input[type='email'],
-  input[type='number'],
-  input[type='search'],
-  input[type='date'] {
-    cursor: text;
-    border-bottom: var(--input-border-size) solid var(--input-border-color);
-    color: var(--input-color);
-    line-height: 1;
-  }
-
-  input[type='text'].input-copyable {
-    background: var(--input-bg);
-    color: var(--input-disabled-color);
-    width: 100%;
-    font-family: 'Consolas', 'Lucida Console', 'Adobe Source Code Pro', monospace;
-    border-bottom: 1px dotted var(--color-divider);
-  }
+  padding: $spacing-vertical / 3 0;
 }
 
 .form-row__error {
@@ -44,6 +24,14 @@
 
 .form-row__label {
   color: var(--color-grey-dark);
+}
+
+.form__prefix {
+  padding-right: 5px;
+}
+
+.form__postfix {
+  padding-left: 5px;
 }
 
 // Not sure if I like these

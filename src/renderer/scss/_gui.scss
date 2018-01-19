@@ -85,6 +85,22 @@ ul {
   list-style-type: none;
 }
 
+input {
+  width: 100%;
+  cursor: text;
+  border-bottom: var(--input-border-size) solid var(--input-border-color);
+  color: var(--input-color);
+  line-height: 1;
+
+  &.input-copyable {
+    background: var(--input-bg);
+    color: var(--input-disabled-color);
+    width: 100%;
+    font-family: 'Consolas', 'Lucida Console', 'Adobe Source Code Pro', monospace;
+    border-bottom: 1px dotted var(--color-divider);
+  }
+}
+
 /*
 */
 .page {
@@ -160,7 +176,7 @@ ul {
   padding: 5px;
   border-radius: 5px;
   font-weight: 700;
-  font-size: .7em;
+  font-size: 0.7em;
 }
 
 .credit-amount--free {

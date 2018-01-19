@@ -63,6 +63,7 @@ Add <a> support (probably just get rid of button prefix)
   font-size: 1em;
   color: var(--btn-inverse-color);
   border-radius: 0;
+  display: inline;
 
   &:hover {
     border-bottom: 1px solid;
@@ -98,12 +99,11 @@ Add <a> support (probably just get rid of button prefix)
   }
 }
 
-
 .btn.btn--disabled:disabled {
   cursor: default;
 
   &.btn--primary {
-    background-color: rgba(0,0,0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   &.btn--alt {

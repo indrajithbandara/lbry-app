@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'component/link';
 import { getExampleAddress } from 'util/shape_shift';
-import { Submit, FormRow } from 'component/form';
+import { FormRow } from 'component/common/form';
 import type { ShapeShiftFormValues, Dispatch } from 'redux/actions/shape_shift';
 import ShiftMarketInfo from './market_info';
 
@@ -49,23 +49,27 @@ export default (props: Props) => {
   } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-field">
-        <span>{__('Exchange')} </span>
-        <select
-          className="form-field__input form-field__input-select"
-          name="originCoin"
-          onChange={e => {
-            getCoinStats(e.target.value);
-            handleChange(e);
-          }}
-        >
-          {shiftSupportedCoins.map(coin => (
-            <option key={coin} value={coin}>
-              {coin}
-            </option>
-          ))}
-        </select>
-        <span> {__('for LBC')}</span>
+      <FormRow
+        prefix={__('Exchange')}
+        postfix={__('for LBC')}
+        render={() => (
+          <select
+            className="form-field__input form-field__input-select"
+            name="originCoin"
+            onChange={e => {
+              getCoinStats(e.target.value);
+              handleChange(e);
+            }}
+          >
+            {shiftSupportedCoins.map(coin => (
+              <option key={coin} value={coin}>
+                {coin}
+              </option>
+            ))}
+          </select>
+        )}
+      />
+      <div>
         <div className="shapeshift__tx-info">
           {!updating &&
             originCoinDepositMax && (
@@ -81,15 +85,18 @@ export default (props: Props) => {
       </div>
 
       <FormRow
-        type="text"
-        name="returnAddress"
-        placeholder={getExampleAddress(originCoin)}
         label={__('Return address')}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values.returnAddress}
-        errorMessage={errors.returnAddress}
-        hasError={touched.returnAddress && !!errors.returnAddress}
+        error={touched.returnAddress && !!errors.returnAddress && errors.returnAddress}
+        render={() => (
+          <input
+            type="text"
+            name="returnAddress"
+            placeholder={getExampleAddress(originCoin)}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.returnAddress}
+          />
+        )}
       />
       <span className="help">
         <span>
@@ -98,7 +105,8 @@ export default (props: Props) => {
         </span>
       </span>
       <div className="card__actions card__actions--only-vertical">
-        <Submit
+        <Link
+          type="submit"
           label={__('Begin Conversion')}
           disabled={isSubmitting || !!Object.keys(errors).length}
         />
