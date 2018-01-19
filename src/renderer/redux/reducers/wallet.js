@@ -2,9 +2,12 @@ import * as ACTIONS from 'constants/action_types';
 
 const reducers = {};
 const receiveAddress = localStorage.getItem('receiveAddress');
+
+// These need to be empty strings instead of undefined
+// React doesn't like `undefined` inside input elements
 const buildDraftTransaction = () => ({
-  amount: undefined,
-  address: undefined,
+  amount: "",
+  address: "",
 });
 
 const defaultState = {

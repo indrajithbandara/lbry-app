@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'component/link';
-import { Form, FormRow, Submit } from 'component/form.js';
+import { Form, FormRow, Submit } from 'component/form';
 
 class UserEmailVerify extends React.PureComponent {
   constructor(props) {

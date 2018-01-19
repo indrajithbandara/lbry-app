@@ -1,6 +1,6 @@
 import React from 'react';
 import FormField from 'component/formField';
-import { FormRow } from 'component/form.js';
+import { FormRow } from 'component/form';
 import * as settings from 'constants/settings';
 import lbry from 'lbry.js';
 import Link from 'component/link';

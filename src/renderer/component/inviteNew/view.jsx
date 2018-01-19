@@ -1,7 +1,7 @@
 import React from 'react';
 import { BusyMessage } from 'component/common';
 import CreditAmount from 'component/common/credit-amount';
-import { Form, FormRow, Submit } from 'component/form.js';
+import { Form, FormRow, Submit } from 'component/form';
 
 class FormInviteNew extends React.PureComponent {
   constructor(props) {

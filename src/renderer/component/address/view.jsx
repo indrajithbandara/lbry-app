@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { clipboard } from 'electron';
+import { FormRow } from 'component/common/form';
 import Link from 'component/link';
-import classnames from 'classnames';
 
 export default class Address extends React.PureComponent {
   static propTypes = {
@@ -19,28 +19,32 @@ export default class Address extends React.PureComponent {
     const { address, doShowSnackBar } = this.props;
 
     return (
-      <div className="form__field">
-        <input
-          className={classnames('input-copyable', {})}
-          type="text"
-          ref={input => {
-            this._inputElem = input;
-          }}
-          onFocus={() => {
-            this._inputElem.select();
-          }}
-          readOnly="readonly"
-          value={address || ''}
-        />
-        <Link
-          alt
-          icon="Clipboard"
-          onClick={() => {
-            clipboard.writeText(address);
-            doShowSnackBar({ message: __('Address copied') });
-          }}
-        />
-      </div>
+      <FormRow
+        render={() => (
+          <React.Fragment>
+            <input
+              className="input-copyable"
+              type="text"
+              readOnly="readonly"
+              value={address || ''}
+              ref={input => {
+                this._inputElem = input;
+              }}
+              onFocus={() => {
+                this._inputElem.select();
+              }}
+            />
+            <Link
+              alt
+              icon="Clipboard"
+              onClick={() => {
+                clipboard.writeText(address);
+                doShowSnackBar({ message: __('Address copied') });
+              }}
+            />
+          </React.Fragment>
+        )}
+      />
     );
   }
 }

@@ -20,7 +20,7 @@ class TransactionListRecent extends React.PureComponent {
           {!fetchingTransactions && (
             <TransactionList
               transactions={transactions}
-              emptyMessage={__('You have no recent transactions.')}
+              emptyMessage={__("Looks like you don't have any recent transactions.")}
             />
           )}
         </div>

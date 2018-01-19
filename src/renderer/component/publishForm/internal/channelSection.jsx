@@ -1,6 +1,6 @@
 import React from 'react';
 import lbryuri from 'lbryuri';
-import { FormRow } from 'component/form.js';
+import { FormRow } from 'component/form';
 import { BusyMessage } from 'component/common';
 import Link from 'component/link';
 

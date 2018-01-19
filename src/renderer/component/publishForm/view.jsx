@@ -2,7 +2,7 @@ import React from 'react';
 import lbry from 'lbry';
 import lbryuri from 'lbryuri';
 import FormField from 'component/formField';
-import { Form, FormRow, Submit } from 'component/form.js';
+import { Form, FormRow, Submit } from 'component/form';
 import Link from 'component/link';
 import FormFieldPrice from 'component/formFieldPrice';
 import Modal from 'modal/modal';

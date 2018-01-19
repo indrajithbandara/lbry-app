@@ -101,7 +101,14 @@ Add <a> support (probably just get rid of button prefix)
 
 .btn.btn--disabled:disabled {
   cursor: default;
-  background-color: transparent;
+
+  &.btn--primary {
+    background-color: rgba(0,0,0, .5);
+  }
+
+  &.btn--alt {
+    // Come back to me
+  }
 
   &:hover {
     box-shadow: none;

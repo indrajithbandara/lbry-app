@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormRow, Submit } from 'component/form.js';
+import { Form, FormRow, Submit } from 'component/form';
 
 class UserEmailNew extends React.PureComponent {
   constructor(props) {
